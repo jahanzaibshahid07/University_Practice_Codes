@@ -1,0 +1,15 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	char str[50];
+	cout << "Enter string ";
+	cin >> str;
+	int a = 0;
+	while (str[a] != '\0') // null pointer 
+		a++;
+	cout << "length is " << a;
+	getch();
+}

@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui  // never expose your class fields publicly beacuse we will not have any control over these fields
+{
+    class student    // if you want yo use encapsulation those fields then we use properties if programming lan does not support properties then we use getter and setter method.. 
+    {
+        
+        private int _id;
+        private string _name;
+        private int passmark = 50;               // problems with public fields
+                                                // id should be positive
+        public int getmark()                   // name cannot be null  
+        {                                     // if name is missing return no name
+            return this.passmark;            // passmark shuld be read only
+        }
+
+        public void setname(string name)
+        {
+            if(string.IsNullOrEmpty(name))
+            {
+                throw new Exception("name cannot be null or empty");
+            }
+
+            this._name = name;
+        }
+
+        public string getname()
+        {
+            return string.IsNullOrEmpty(this._name) ? " no name" : this._name;
+        }
+
+        public void setid(int id)
+        {
+            if(id <= 0)
+            {
+                throw new Exception("student id never be -ve ");
+            }
+            this._id = id;
+        }
+
+        public int getid()
+        {
+            return this._id;
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student s1 = new student();
+            s1.setid(1);
+            s1.setname("jahanzaib");
+
+            Console.WriteLine("Student id is = {0}", s1.getid());
+            Console.WriteLine("Sudent name is = {0}", s1.getname());
+            Console.WriteLine("Sudents passmark is = {0}", s1.getmark());
+
+            Console.ReadKey();
+        }
+    }
+}

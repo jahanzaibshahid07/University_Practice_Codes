@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl
+{
+    class box
+    {
+        double width, height, depth;
+
+        public box(double w, double h, double d)
+        {
+            width = w;
+            height = h;
+            depth = d;
+        }
+        public box()
+        {
+            width = height = depth = -2;
+        }
+        public box(double len)
+        {
+            width = height = depth = len;
+        }
+        public double volume()
+        {
+            return width * height * depth;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            box b1 = new box(10,20,30);
+            box b2 = new box(-8);
+            box b3 = new box(8);
+
+            double vol;
+
+            vol = b1.volume();
+            Console.WriteLine("volume of box1 " + vol);
+
+            vol = b2.volume();
+            Console.WriteLine("volume of box2 " + vol);
+
+            vol = b3.volume();
+            Console.WriteLine("volume of box3 " + vol);
+
+            Console.ReadKey();
+        }
+    }
+}

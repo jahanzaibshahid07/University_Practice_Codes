@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl  
+{
+    class Employee
+    {
+        public string fname = "jahanzaib";
+        public string lname = "shahid"; 
+
+        public virtual void printname() // virtual indicates that the method can be overridden in any derived class.
+        {
+            Console.WriteLine(fname + " " + lname);
+        }
+    }
+
+    class fulltime : Employee
+    {
+        public override void printname()
+        {
+            Console.WriteLine(fname + " " + lname + " -fulltime");
+        }
+ 
+    }
+
+    class halftime : Employee
+    {
+        public override void printname()
+        {
+            Console.WriteLine(fname + " " + lname + " -haltime");
+        }
+    }
+
+    class temtime : Employee
+    {
+        public override void printname()
+        {
+            Console.WriteLine(fname + " " + lname + " -temtime");
+        }
+    }
+
+    class Program       //parent class ref var can point to a child class object is a basic concept of polymorphism..
+     {                  //polyporphism enables you to invoke derived class methods to using a base class reference variable at runtime..
+
+
+        static void Main(string[] args)
+        { 
+            Employee []employees = new Employee[4];
+            employees[0] = new Employee();
+            employees[1] = new fulltime();   
+            employees[2] = new halftime();
+            employees[3] = new temtime();
+
+            foreach (Employee e in employees)
+            {
+                e.printname();
+            }
+
+            Console.ReadKey();
+        }
+    }
+}

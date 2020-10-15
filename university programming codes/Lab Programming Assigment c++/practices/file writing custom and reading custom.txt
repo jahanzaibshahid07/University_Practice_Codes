@@ -1,0 +1,47 @@
+#include <iostream>
+#include <conio.h>
+#include <fstream>
+
+using namespace std;
+
+void main()
+{
+	ofstream thefile("players.txt");  // ofstream for output and writing
+
+	cout << "Enter player id,name and money \n";
+	cout << "press crt + z to quit \n";
+
+	int id;
+	char name[20];
+	float money;
+
+	while (cin >> id >> name >> money)
+	{
+		thefile << id << " " << name << " " << money << endl; // space must be apply in program 
+	}
+	getch();
+}
+
+
+xx==============================================================xx
+
+
+#include <iostream>
+#include <conio.h>
+#include <fstream> 
+using namespace std;
+
+void main()
+{
+	ifstream thefile("players.txt"); // ifstream for input and reading 
+
+	int id;
+	char name[20];
+	float money;
+
+	while (thefile >> id >> name >> money)
+	{ 
+		cout << id << " " << name << " " << money << endl;    // space must be apply in program 
+	}
+	getch();
+}

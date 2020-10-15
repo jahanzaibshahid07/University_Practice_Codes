@@ -1,0 +1,23 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	float amount;
+	int year;
+	float in;
+
+	cout << "Enter amount \n";
+	cin >> amount;
+	cout << "Enter year \n";
+	cin >> year;
+	cout << "Enter interest \n";
+	cin >> in;
+	for (int a = 0; a < year; a++)
+	{
+		amount = amount +(amount*in);
+		cout << "\nEnd of the year " << amount;
+	}
+	getch();
+}

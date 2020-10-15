@@ -1,0 +1,23 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+void main()
+{
+	char str1[50],str2[50];
+	cout << "Enter 1st string ";
+	cin >> str1;
+	cout << "Enter 2nd string ";
+	cin >> str2;
+	int a = 0;
+	while (str1[a] == str2[a] && str1[a] != '\0')
+		a++;
+		if(str1[a] > str2[a])
+			cout << " str1 > str2 ";
+		else if(str1[a] < str2[a])
+			cout << " str1 < str2 ";
+		else
+			cout << " str1 == str2 ";
+	getch();
+}

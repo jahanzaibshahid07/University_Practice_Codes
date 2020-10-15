@@ -1,0 +1,17 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+ 
+void main()
+{ 
+	int a[5] = {2,4,6,8,10};
+	int *p = a;
+
+	cout << p;  // address of 2
+	cout << &p;  // address of 2
+	cout << 2[p];  // value of 6 [] 
+	cout << p[2];    //value of 6
+	cout << p+2;      // address of 6
+	cout << *(p + 2);   // value of 6
+	getch();
+}

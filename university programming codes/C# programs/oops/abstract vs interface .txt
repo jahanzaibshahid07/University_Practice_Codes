@@ -1,0 +1,39 @@
+// abstract class implementation of some member but interface cannot have implementation of its any method...
+// interface cannot have where as abstract class have fields
+// an interface cannot inherit form class but abstact class can inherit form interface....
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    public abstract class customer
+    {
+        int id;
+        public void print()
+        {
+            Console.WriteLine("abstract can have member implementation");
+        }
+    }
+
+    public interface i1
+    {
+        int id;
+        void print();
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.ReadKey();
+        }
+    }
+}

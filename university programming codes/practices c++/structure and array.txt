@@ -1,0 +1,37 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+struct student 
+{
+	int id;
+	char name[20];
+	int mark[6];
+};
+
+void main()
+{
+	struct student s1;
+	int sum = 0;
+	cout << "Enter id ";
+	cin >> s1.id;
+	cout << "Enter name ";
+	cin >> s1.name;
+	cout << "Enter 6 subject marks ";
+
+	for (int a = 0; a < 6; a++)
+	{
+		cin >> s1.mark[a];
+		sum =  sum + s1.mark[a];
+	}
+
+	cout << "\nStudent id is " << s1.id;
+	cout << "\nStudent name is " << s1.name;
+
+	for (int a = 0; a < 6; a++)
+	{
+		cout << "\nStudent marks is  " << s1.mark[a] << endl;
+	}
+	cout << "\nTotal marks is " << sum;
+	getch();
+}

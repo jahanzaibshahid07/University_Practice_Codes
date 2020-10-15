@@ -1,0 +1,90 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+class printclass    // class name 
+{
+public:            // in public we can assiss function outside of the void() 
+	void print()   // its a function 
+	{
+		cout << "my name is jahanzaib ";
+	}
+};
+
+void main()
+{
+	printclass printobj;  // class name and object
+
+	printobj.print();     // we use object to use their data
+
+	getch();
+}
+
+xx=========================================================xx
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+class human
+{
+	int age;
+	int getage()
+	{
+		return age - 5;
+	}
+
+public:
+
+	void setage(int a)
+	{
+		age =  a;
+	}
+	void displayage()
+	{
+		cout << "age is " << getage();
+	}
+};
+
+void main()
+{
+	human obj;
+	obj.setage(50);
+	obj.displayage();
+	getch();
+}
+
+xx=======================================================xx
+
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+class bankaccount
+{
+public:
+	int account;
+	string name;
+	double money;
+
+	void bank()
+	{
+		cout << "\nname is " << name;
+		cout << "\naccount is " << account;
+		cout << "\nmoney is " << money;
+	}
+};
+
+void main()
+{
+	bankaccount obj;
+	cout << "Enter name ";
+	cin >> obj.name;
+	cout << "Enter account no ";
+	cin >> obj.account;
+	cout << "Enter money ";
+	cin >> obj.money;
+	obj.bank();
+	getch();
+}

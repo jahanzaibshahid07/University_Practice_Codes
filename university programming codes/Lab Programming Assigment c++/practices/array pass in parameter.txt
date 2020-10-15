@@ -1,0 +1,44 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+
+void printarray(int arr[])
+{
+	for (int a = 0; a  < 5; a++)
+	{
+		cout << arr[a] << endl;
+	}
+}
+
+void main()
+{
+	int jb[5] = {1,2,3,4,5};
+	printarray(jb);
+	getch();
+}
+
+
+x===========================================================================x
+
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void printarr(int arrhold[],int size)
+{
+	for(int a = 0; a < size; a++)
+	{
+		cout << arrhold[a] << " ";
+	}
+}
+void main()
+{
+	int arr1[5] = {10,45,68,88,99};
+	int arr2[4] = {44,22,33,90};
+	printarr(arr1,5);
+	cout << endl;
+	printarr(arr2,4);
+	getch();
+}

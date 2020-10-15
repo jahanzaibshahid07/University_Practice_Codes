@@ -1,0 +1,55 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int a[5] = {5,7,8,10,2};        // size of array is 4 bytes
+
+	int *p = &a[0];                 // *p store the address of a[0] = 5
+
+	int *q = &a[2];                 // *q store the address of a[2] = 8
+
+	cout << p++ << endl;            /* p++ means moves to second pointer 7 */
+
+	cout << q-- << endl;            //  q-- means moves to previous pointer 7
+
+	p = p + 2;
+	cout << p << endl;              // it should moves on 4 bytes 8
+
+	q = q - 2;
+	cout << q;                      // it should moves previous on 4 bytes 5
+
+	getch();                         // we cant add and multiply two pointer and we cant multiply any const to pointer
+
+}
+
+
+
+
+
+
+
+
+x===============================================================================================================================x
+
+
+
+
+
+#include <iostream>
+#include <conio.h>
+#include <stdio.h>
+using namespace std;
+
+void main()
+{
+	int a[5] = {5,7,8,1,2};         // size of int is 4 bytes  
+	int *p = &a[0];
+	printf("%d",*++p);              // these two operator are unary pointer moves from rigth to left 7
+	printf("%d",++*p);             //  first take the data then increment 8
+	printf("%d",*p++);             // post increment it will read the value then increment 8   
+
+	getch();
+}
+

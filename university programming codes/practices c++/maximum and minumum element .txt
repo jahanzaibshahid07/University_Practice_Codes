@@ -1,0 +1,33 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+
+void main()
+{
+	int value[4] = {4,8,10,7};
+
+	int max = value[0];
+
+	for (int a = 1; a < 4; a++)
+	{
+		if (value[a] > max)
+		{
+			max = value[a];
+		}
+	}
+	cout << "maximun element " << max;
+
+	int min = value[0];
+	for (int a = 1; a < 4; a++)
+	{
+		if (value[a] < min)
+		{
+			min = value[a];
+		}
+	}
+	cout << "\nminimum element " << min;
+
+	getch();
+}

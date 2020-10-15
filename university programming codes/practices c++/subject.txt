@@ -1,0 +1,38 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void average(float mark[])
+{
+	float avg = 0;
+	for (int a = 1; a <= 6; a++)
+	{
+	avg = avg + mark[a];
+	}
+	cout << "Average is " << (avg/600) << endl;
+}
+
+void percentage(float mark[])
+{
+	float per = 0;
+	for (int a = 1; a <= 6; a++)
+	{
+	per = per + mark[a];
+	}
+	cout << "Percentage is " << (per/600)*100 << endl;
+}
+
+void main()
+{
+	float mark[5];
+
+	for (int a = 1; a <= 6; a++)
+	{
+	cout << "Enter subject numbers ";
+	cin >> mark[a];
+	}
+	percentage(mark);
+	average(mark);
+	getch();
+}
+

@@ -1,0 +1,18 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+void main()
+{
+	int a[5] = {50,40,30,20,10};
+	int* aptr0 = &a[0];
+	int* aptr1 = &a[1];
+	int* aptr2 = &a[2];
+	int* aptr3 = &a[3];
+	int* aptr4 = &a[4];
+	cout <<"aptr0 is " << *aptr0;
+	cout <<"\naptr1 is " << *aptr1;
+	cout <<"\naptr2 is " << *aptr2;
+	cout <<"\naptr3 is " << *aptr3;
+	cout <<"\naptr4 is " << *aptr4;
+	getch();
+}

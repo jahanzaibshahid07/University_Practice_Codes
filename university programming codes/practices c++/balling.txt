@@ -1,0 +1,31 @@
+#include <iostream>
+#include<conio.h>
+using namespace std;
+void main()
+{
+	int consumer;
+	int ans;
+
+	cout<<"Enter your consumer number \n";
+	cin>>consumer;
+
+	if (consumer >=0 && consumer <=200)
+	{
+		ans = consumer * 0.50;
+	}
+	else if (consumer >=201 && consumer <=400)
+	{
+		ans = consumer * 0.85;
+	}
+	else if (consumer >= 401 && consumer <=600)
+	{
+		ans = consumer * 1.5;
+	}
+	else
+	{
+		cout<<"Invalid entry";
+	}
+
+	cout<<"you have to pay amount:" << ans <<endl;
+	getch();
+}

@@ -1,0 +1,14 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int sum (int a = 22500,int b = 5500)
+{
+	return a+b;
+}
+void main()
+{
+	int x = 100,y = 500;
+	cout << "Addition is " << sum(x,y);
+	getch();
+}

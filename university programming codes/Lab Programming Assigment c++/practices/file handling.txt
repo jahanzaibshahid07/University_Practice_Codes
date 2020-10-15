@@ -1,0 +1,45 @@
+#include <iostream>
+#include <conio.h>
+#include <fstream>
+
+using namespace std;
+
+void main()
+{
+	ofstream jazzyfile("jahan.txt");
+
+	if (!jazzyfile.is_open())
+	{
+		cout << "File is not open "; 
+	}
+	else 
+	{
+		cout << "File open";
+	}
+
+	jazzyfile.close();
+
+	getch();
+}
+
+xxx=======================================================xxx
+
+
+#include <iostream>
+#include <conio.h>
+#include <fstream>
+
+using namespace std;
+
+void main()
+{
+	ofstream dhobifile;
+
+	dhobifile.open("dhoba.txt");
+
+	dhobifile << " dhoba dhobi lal ";
+
+	dhobifile.close();
+
+	getch();
+}

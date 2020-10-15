@@ -1,0 +1,22 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int mark[] = {50,70,80,20};
+	int *ptr[4];
+
+	for (int a = 0; a < 4; a++)
+	{
+		cout << mark[a] << endl;
+	}
+	
+	for (int a = 0; a < 4; a++)
+	{
+		ptr[a] = &mark[a];
+		cout << *ptr[a] << endl;
+	}
+
+	getch();
+}

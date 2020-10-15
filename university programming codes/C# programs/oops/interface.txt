@@ -1,0 +1,139 @@
+// interface only declaration but no implementation.class is the implementation of interface.
+// you cannot create an instance of the interface and abstuct classes as well..
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    interface Icustomer           // interface method cannot have access modifers.
+    {
+        void print();            //interface cannot have fields.
+    }
+
+    interface i2
+    {
+        void i2method();
+    }
+
+    class customer : Icustomer, i2  //class can inherit for multiple interfaces but class cannot inherit for multiple classes.
+    {
+        public void print()
+        {
+            Console.WriteLine("this is interface implementation");
+        }
+
+        public void i2method()
+        {
+            Console.WriteLine("i2 method second interface");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            customer c1 = new customer();
+            c1.print();
+            c1.i2method();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+xxx======================================================================================xxx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    interface Icustomer1
+    {
+        void print1();
+    }
+
+    interface Icustomer2 :Icustomer1
+    {
+        void print2();
+    }
+
+    class customer : Icustomer2 // a class that inherit this interface must provide all the implementation for all interface in the entire ineterface chain.
+    {
+        public void print1()
+        {
+            Console.WriteLine("print 1");
+        }
+
+        public void print2()
+        {
+            Console.WriteLine("print 2");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            customer c1 = new customer();
+            c1.print1();
+            c1.print2();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+xxx==========================================================================================xxx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    interface Icustomer1
+    {
+        void print1();
+    }
+
+    interface Icustomer2 :Icustomer1
+    {
+        void print2();
+    }
+
+    class customer : Icustomer2
+    {
+        public void print1()
+        {
+            Console.WriteLine("print 1");
+        }
+
+        public void print2()
+        {
+            Console.WriteLine("print 2");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Icustomer1 cust = new customer(); // interface ref var can point to a child class object..
+            cust.print1();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+

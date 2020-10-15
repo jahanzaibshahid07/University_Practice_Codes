@@ -1,0 +1,36 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int angle(int,int,int); // declaration
+
+void main()
+{
+	int x,y,z;
+	int total;
+
+	cout<<"Enter first angle: \n";
+	cin>>x;
+	cout<<"Enter second angle: \n";
+	cin>>y;
+	cout<<"Enter third angle: \n";
+	cin>>z;
+	total = angle(x,y,z);                 // calling
+	cout<<"angle is: \n"<<total;
+	if(total >= 180)                      // if condition
+	{cout<<" triangle is valid \n";}
+	else
+	{cout<<" tringle is not valid \n";}
+
+	getch();
+}
+
+
+int angle(int a,int b,int c) // defination
+{
+	int r;
+	r = (a+b+c);
+	return (r);
+}
+
+	

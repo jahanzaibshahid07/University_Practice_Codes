@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl // inheritance allows you to code resuse it reduce time and error
+{
+
+    class animal  // base class 
+    {
+        public string name;  // class variable 
+        public int age;
+        public float happiness;
+
+        public void printbase() // method
+        {
+            Console.WriteLine("It name is " + name);
+            Console.WriteLine("It age is " + age);
+            Console.WriteLine("It happiness is " + happiness);
+        }
+    }
+
+    class dog : animal // derived class of the base class inheritance 
+    {
+        public int barkness;  // derived class variable 
+
+        public void bark()    // derived class method
+        {
+            Console.WriteLine("It barkness is " + barkness);
+            Console.WriteLine("Bow!!");
+        }
+    }
+
+    class cat : animal    // derived class is the specilization of the base class it consist all the properties of the base class.
+    {
+        public float cutness;
+
+        public void meow()   
+        {
+            Console.WriteLine("It cuteness is " + cutness);
+            Console.WriteLine("meow!!");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            dog labra = new dog();
+            labra.name = "italian labra";
+            labra.age = 11;
+            labra.happiness = 125.2f;
+            labra.barkness = 100;
+            labra.printbase();
+            labra.bark();
+
+            Console.WriteLine();
+
+            cat pussy = new cat();
+            pussy.name = "pussycat";
+            pussy.age = 1;
+            pussy.happiness = 1.025f;
+            pussy.cutness = 120.25f;
+            pussy.printbase();
+            pussy.meow();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+xx===============================================================================================xx
+//class constractor of inheritance 
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl
+{
+    class parentclass                     // parent class constractor automatically call when child class call
+    {
+        public parentclass()              // parameterless constractor
+        {
+            Console.WriteLine("parent class constractor");  
+        }
+
+        public parentclass(string name) // parameter constractor 
+        {
+            Console.WriteLine(name);
+        }
+    }
+
+    class childclass : parentclass   //if you want to control which constractor called first then you use base keywoard      
+    {
+        public childclass() : base("jahanzaib shahid")
+        {
+            Console.WriteLine("childclass constratcor");
+        }
+    }
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            childclass cc = new childclass();
+
+            Console.ReadKey();
+        }
+    }
+}
+

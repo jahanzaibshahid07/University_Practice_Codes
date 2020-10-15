@@ -1,0 +1,98 @@
+// in c# to encapsulate and protected fields we use properties..
+// we use get and set accessors to implements properties...
+// get accessors is read only property and set accessors is write only property....
+// if you have any field which doesnot have logic with them with get and set property then you can use auto implementated properties....
+// which will reduce the amount of code that you have to write in auto im the complier will automatically create the backing private fields
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    class student
+    {
+        int _id;
+        string _name;
+        int _passmark = 35;
+
+        public string Email    
+        {
+            get;
+            set;
+        }
+
+        public string City
+        {
+            get;
+            set;
+        }
+
+        public int passmark
+        {
+            get 
+            {
+                return this._passmark;
+            }
+        }
+
+        public string Name
+        {
+            set 
+            {
+                if(string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("name cannot be null an empty");
+                }
+
+                this._name = value;
+            }
+
+            get 
+            {
+                return string.IsNullOrEmpty(this._name) ? "no name" : this._name; 
+            }
+        }
+
+        public int ID
+        {
+            set 
+            {
+                if(value <= 0)
+                {
+                    throw new Exception("id cannot be null and empty");
+                }
+
+                this._id = value;
+            }
+
+            get 
+            {
+                return this._id;
+            }
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student s1 = new student();
+            s1.ID = 1;
+            s1.Name = "jahanzaib";
+            s1.City = "pakistan";
+            s1.Email = "jahanzaibshahid07@gmail.com";
+
+            Console.WriteLine("student id is " + s1.ID);
+            Console.WriteLine("student name is " + s1.Name);
+            Console.WriteLine("student passmark is " + s1.passmark);
+            Console.WriteLine("student city name is " + s1.City);
+            Console.WriteLine("student email is " + s1.Email);
+
+            Console.ReadKey();
+        }
+    }
+}

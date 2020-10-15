@@ -1,0 +1,15 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+void main()
+{
+	string str;
+	cout << "Enter string \n";
+	cin >> str;
+	cout << "your string is \n" << str;
+	str = string(str.rbegin(),str.rend()); // reverse function reverse(reversed.begin(),reversed.end());
+	cout << "\nreverse string " << str;
+	getch();
+}

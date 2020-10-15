@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl
+{
+
+    class customer
+    {
+        string firstname;
+        string lastname;
+
+        public customer() : this("jahanzaib","shahid") //  this refer to the instance of the class customer 
+        {
+
+        }
+
+        public customer(string _firstname, string _lastname) // class constractor with parameter  
+        {
+            this.firstname = _firstname;
+            this.lastname = _lastname;
+        }
+
+        public void printbase()
+        {
+            Console.WriteLine("full name of " + this.firstname + " " + this.lastname);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            customer c1 = new customer();  // overload class 
+            c1.printbase();
+
+            customer c2 = new customer("rematwa", "champela");
+            c2.printbase();
+
+            Console.ReadKey();
+        }
+    }
+}

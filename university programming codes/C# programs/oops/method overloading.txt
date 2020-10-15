@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl
+{
+    class overloadmethod
+    {
+        //methods
+
+        public void test() 
+        {
+            Console.WriteLine("no parameter ");
+        }
+        public void test(int a) 
+        {
+            Console.WriteLine("a = " + a);
+        }
+
+        public void test(int a,int b)
+        {
+            Console.WriteLine("a & b = " + a + " " + b);
+        }
+
+        public double test(double a)
+        {
+            Console.WriteLine("double a = " + a);
+            return a * a;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            overloadmethod t1 = new overloadmethod();
+            double result;
+
+            t1.test();
+            t1.test(10);
+            t1.test(10,20);
+
+            result = t1.test(123.25);
+            Console.WriteLine("result of t1.test(12.025) = " + result);
+
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,18 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void printnum(int x)
+{
+	cout<<"Jahanzaib favt number is ";
+}
+
+void main()
+{
+	int a;
+	cout<<"Enter favt number: \n";
+	cin>>a;
+	printnum(a);
+	cout<<a;
+	getch();
+}

@@ -1,0 +1,16 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int a = 700;
+	int *p;
+	p = &a;
+	cout << a << endl; // value of a = 700
+	cout << *p << endl; // value of *p = 700
+	cout << &a << endl; // add of a = a5d5
+	cout << p << endl; // val of p = a5d5
+	cout << &p << endl; // add of p = g7h8
+	getch();
+}

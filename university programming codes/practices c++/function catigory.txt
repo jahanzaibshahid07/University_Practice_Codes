@@ -1,0 +1,85 @@
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void sqr(void)                                         // no return type and no parameter()
+{
+	int no;
+	cout << "Enter number to sqr";
+	cin >> no;
+	cout << "Sqr is " << (no * no);
+}
+
+void main()
+{
+	sqr();
+	getch();
+}
+
+
+xx===============================xx
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+ 
+void add(int a, int b)                                 // no return type but parameter(int)              
+{ 
+	cout << "mul is " << (a * b);
+}
+
+void main()
+{
+	int a,b;
+	cout << "Enter two number to + \n";
+	cin >> a >> b;
+	add(a,b);
+	getch();
+}
+
+xx===================================xx
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int sub ()                                           // return type but no paramter() 
+{
+	int a,b;
+	cout << "Enter two number ";
+	cin >> a >> b;
+	return (a - b);
+}
+
+void main()
+{
+	cout << "sub is " << sub();
+	getch();
+}
+
+xx====================================xx
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+  
+int mul(int a, int b)                                 // return type and parameter(int) 
+{
+	return (a * b);
+}
+
+void main()
+{
+	int a,b,c;
+	cout << "Enter two number\n";
+	cin >> a >> b;
+	c = mul(a,b);
+	cout << "multiplication " << c;
+	getch();
+}
+
+
+
+
+

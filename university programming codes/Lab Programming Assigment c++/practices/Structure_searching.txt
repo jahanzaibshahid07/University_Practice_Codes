@@ -1,0 +1,38 @@
+#include<iostream>
+#include<stdio.h>
+#include<conio.h>
+using namespace std;
+struct employee
+{
+int emp_id;
+char name[20];
+float salary;
+char address[50];
+int dept_no;
+};
+
+void main ( )
+{
+struct employee e1[3];
+//Taking Input to the structure...!!! 
+for(int a=0;a<3;a++)
+{
+	printf(" Enter Data For Employee No. %d ",a+1);
+printf("\nEnter the employee id of employee ");
+scanf("%d",&e1[a].emp_id);
+printf("\nEnter the name of employee ");
+scanf("%s",&e1[a].name);
+printf("\nEnter the salary of employee ");
+scanf("%f",&e1[a].salary);
+printf ("\nEnter the address of employee ");
+scanf("%s",&e1[a].address);
+printf ("\nEnter the department of employee ");
+scanf("%d",&e1[a].dept_no);
+}
+//Show Data from structure
+int id;
+printf(" Enter The ID of Employee to trace name : ");
+scanf("%d",&id);
+printf(" The name of Employee is : %s",e1[id-1].name);
+getch();
+}

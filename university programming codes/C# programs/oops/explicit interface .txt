@@ -1,0 +1,127 @@
+//access modifier are not allowed to explicit interface implementation .....
+// in explicit interface member can no longer be accessed thru class ref var but only thru the interface ref var...
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    interface i1
+    {
+        void print();
+    }
+
+    interface i2
+    {
+        void print();
+    }
+
+    class Program : i1,i2
+    {
+        void i1.print()                    // i1 and i2 interface ref var..s
+        {
+            Console.WriteLine("i1 method");
+        }
+
+        void i2.print()
+        {
+            Console.WriteLine("i2 method");
+        }
+
+        static void Main(string[] args)
+        {
+            Program p1 = new Program();  // p1 is a object ref var..
+            ((i1)p1).print();            
+            ((i2)p1).print();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+xxx===================================================================================xxx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    interface i1
+    {
+        void print();
+    }
+
+    interface i2
+    {
+        void print();
+    }
+
+    class Program : i1,i2
+    {
+        void i1.print()
+        {
+            Console.WriteLine("i1 method");
+        }
+
+        void i2.print()
+        {
+            Console.WriteLine("i2 method");
+        }
+
+        static void Main(string[] args)
+        {
+            i1 i1 = new Program();      //another method interface ref var can point to a child class object
+            i2 i2 = new Program();
+            i1.print();
+            i2.print();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+xxx============================================================================xxx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    interface i1
+    {
+        void print();
+    }
+
+    interface i2
+    {
+        void print();
+    }
+
+    class Program : i1,i2
+    {
+        void i1.print()
+        {
+            Console.WriteLine("i1 method");
+        }
+
+        public void print()
+        {
+            Console.WriteLine("i2 method");
+        }
+
+        static void Main(string[] args) // if you want to make interface method default then implement the method normally and the other explicit method....  
+        {
+            Program p1 = new Program();
+            p1.print();
+            ((i1)p1).print();
+
+            Console.ReadKey();
+        }
+    }
+}

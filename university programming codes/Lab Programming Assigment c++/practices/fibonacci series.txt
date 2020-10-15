@@ -1,0 +1,27 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int f = 0, s = 1, next,no;
+
+	cout << "Enter terms "; 
+	cin >> no;
+
+	for (int a = 0; a < no; a++)
+	{
+		if( a <= 1)
+		{
+			next = a;
+		}
+		else 
+		{
+			next = f + s;
+			f = s;
+			s = next;
+		}
+		cout << "fib " << next << endl;
+	}
+	getch();
+}

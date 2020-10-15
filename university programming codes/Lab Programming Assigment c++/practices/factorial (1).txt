@@ -1,0 +1,22 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int a;
+	int factorial = 1;
+	cout<<"Enter number: \n"; 
+	cin>>a; // input number
+
+	for(int i = 1; i <= a; i++) // loop starts with 1
+	{
+		factorial = factorial * i; }    /* factorial = 1 * 1
+			                           factorial = 1 * 2  
+	  	 			           factorial = 2 * 3
+						   factorial = 6 * 4 
+						   factorial = 24 * 5  */ 
+
+	cout<<"Factorial of " << a << " = " << factorial; // output factorial
+	getch();
+}

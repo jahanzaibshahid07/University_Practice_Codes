@@ -1,0 +1,43 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main ()
+	{
+	
+		int mn,mx;
+		const int Numb = 3;
+		int a[Numb]; // 3 elements
+	
+		cout<<"Enter 3 values:"; //prompts user for 3 values.
+	
+		for(int i=0;i<3;i++)
+		{
+		cout<< "\nEnter value: ";
+		cin>> a[i]; // puts values in array
+		}
+
+		mn=a[0]; // first index of the array 
+		mx=a[0];
+
+		for(int i=1;i<3;i++)
+		{
+		
+			if(mn>a[i])  // 1 > 2 false
+			{
+			mn=a[i];
+			}
+		
+			else if(mx<a[i]) // 1 < 2 true 
+			{
+			mx = a[i];
+			}
+
+		}
+
+		cout<<"Maximum number is: "<< mx << endl;
+		cout<<"Minimum number is: "<< mn << endl;
+	
+		getch();
+
+}

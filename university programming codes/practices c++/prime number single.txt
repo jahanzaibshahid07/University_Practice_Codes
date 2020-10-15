@@ -1,0 +1,27 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int no,ans;
+
+	cout << "Enter prime number ";
+	cin >> no;
+
+	for (int a = 2; a <=no/2; a++)          // loop starts with 2 and end with half of given number
+	{
+		ans = no % a;
+
+		if (ans == 0)
+		{
+			cout << "Not a prime number " << no;
+			getch();                     // getch and exit(0) use not to repeat loop.
+			exit(0);
+		}
+	}
+
+	cout << "prime number " << no; 
+
+	getch();
+}

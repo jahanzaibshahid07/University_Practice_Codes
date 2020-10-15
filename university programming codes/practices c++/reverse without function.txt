@@ -1,0 +1,25 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int reverse (int num)
+{
+	int r = 0;
+
+	while(num > 0)
+	{
+		r = r*10+num%10;   //  r = 0*10 + 123%10 = 3
+		num = num/10;      //  num = 123/10
+	}
+
+	return r;
+}
+
+void main()
+{
+	int num;
+	cout << "Enter number ";
+	cin >> num;
+	cout << "reverse is " << reverse(num); 
+	getch();
+}

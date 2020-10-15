@@ -1,0 +1,16 @@
+#include <iostream>
+#include <conio.h>
+#include <string> 
+using namespace std;
+
+
+void main()
+{
+	char s[20];
+
+	cout << "Enter string ";
+	cin >> &s[0]; // give the address of s and swap the string 
+	strrev(s);
+	cout << "reverser string is " << s;
+	getch();
+}

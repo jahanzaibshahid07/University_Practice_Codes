@@ -1,0 +1,15 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+void main()
+{
+	char a[50],b[50],c;
+	cout << "Enter two string ";;
+	cin >> a;
+	cin >> b;
+	c = strcmp(a,b);
+	cout << "comp " << c;
+	getch();
+}

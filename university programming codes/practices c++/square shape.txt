@@ -1,0 +1,29 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void main()
+{
+	int size;
+
+	cout << "Enter size ";
+	cin >> size;
+
+	for (int row = 0; row <=size; row++)
+	{
+		for (int col = 0; col <=size; col++)
+		{
+			if(row==0 || row == size || col == 0 || col == size)
+			{
+				cout << "x";
+			}
+			else
+			{
+				cout << " ";
+			}
+		}
+		cout << endl;
+	}
+	getch();
+}

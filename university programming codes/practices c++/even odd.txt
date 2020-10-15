@@ -1,0 +1,18 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int i = 1;
+	cout<<"Enter number: \n";
+	cin>>i;
+	if (i%2==0)
+	{
+		cout<<"number is even";
+	}
+	else{
+		cout<<"number is odd";
+	}
+	getch();
+}

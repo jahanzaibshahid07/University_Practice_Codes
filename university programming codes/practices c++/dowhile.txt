@@ -1,0 +1,20 @@
+#include<iostream>
+#include<conio.h>
+#include<stdio.h>
+using namespace std;
+
+void main()
+{
+	
+	int year;
+        printf( "\n Enter Count of Year : " );
+		scanf("%d",&year);
+	do
+	{
+		printf("\n ssuet ");
+		printf( "\n Enter Count of Year : " );
+		scanf("%d",&year);
+	}while(year<10);
+
+	getch();
+}

@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    public struct customer   // just like classes struct can have field, properties, constructors, methods...
+    {                         // structure is collection of different data type...
+        int _id;
+        string _name;
+
+        public int Id
+        {
+            get { return _id; }
+            set { this._id = value; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+            set { this._name = value; }
+        }
+
+        public customer(int Id,string Name)
+        {
+            this._id = Id;
+            this._name = Name;
+        }
+
+        public void print()
+        {
+            Console.WriteLine("id is " + this._id);
+            Console.WriteLine("name is " + this._name);
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            customer c1 = new customer(10,"jahanzaib");
+            c1.print();
+            Console.WriteLine();
+
+            customer c2 = new customer();
+            c2.Id = 15;
+            c2.Name = "rematwa";
+            c2.print();
+            Console.WriteLine();
+
+            customer c3 = new customer
+            {
+                Id = 44,
+                Name = "zeeshan 77"
+            };
+            c3.print();
+
+            Console.ReadKey();
+        }
+    }
+}

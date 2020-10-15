@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl
+{
+    class test
+    {
+        int a,b;
+
+        public test(int i ,int j) // method
+        {
+            a = i;
+            b = j;
+        }
+
+        //here we pass object as parameter
+        public bool equals(test o) // o is the ref which at first initilize with ob2 
+        {
+            if (o.a == a && o.b == b)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            test ob1 = new test(100,22); 
+            test ob2 = new test(100,22);
+            test ob3 = new test(-1,-1);
+
+            Console.WriteLine("ob1 == ob2 " + ob1.equals(ob2)); // ob2 here reference object
+            Console.WriteLine("ob1 == ob3 " + ob1.equals(ob3));
+
+            Console.ReadKey();
+        }
+    }
+}

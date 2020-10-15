@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl
+{
+    class circle
+    {
+        static float _pi; // static give one copy of pi to allocate memaory of thousand object and works efficiently.
+        int _r;
+
+        static circle()  // static constractor use to initiaze static field and dont use access modifier and work efficient
+        {
+            Console.WriteLine("Static constractor ");
+            circle._pi = 3.14f;
+        }
+
+        public circle(int radius)  // instance constrator use access modifier by default private.  
+        {
+            Console.WriteLine("Instance constractor ");
+            _r = radius;
+        }
+
+        public float CalCirleArea() // method
+        {
+            return circle._pi * (this._r * this._r); // static constra are called before instance constra..static cons only call once 
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            circle c1 = new circle(2);
+            float area1 = c1.CalCirleArea();
+            Console.WriteLine("Area = " + area1);
+
+
+            circle c2 = new circle(5);
+            float area2 = c2.CalCirleArea();
+            Console.WriteLine("Area = " + area2);
+
+            circle c3 = new circle(8);
+            float area3 = c3.CalCirleArea();
+            Console.WriteLine("Area = " + area3);
+
+          Console.ReadKey();
+        }
+    }
+}
+
+xxx=================================================================================xxx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    class circle
+    {
+        public static float pi;
+
+        static circle()
+        {
+            Console.WriteLine("static constrator");
+            pi = 3.142f;
+        }
+ 
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(circle.pi);
+
+            Console.ReadKey();
+        }
+
+    }
+}
+
+

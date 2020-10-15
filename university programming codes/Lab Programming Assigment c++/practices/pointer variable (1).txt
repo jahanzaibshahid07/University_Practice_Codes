@@ -1,0 +1,19 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int age = 22;
+	float per = 80.25; // initilai
+	char grade = 'a';
+
+	int *ageptr = &age; // pointer variable
+	float *perptr = &per;
+	char *gradeptr = &grade;
+
+	cout << "Age is " << *ageptr << "\nAge address " << ageptr;
+	cout << "\nPer is " << *perptr << "\nPer address " << perptr;
+	cout << "\nGrade is " << *gradeptr << "\nGrade Address " << gradeptr;
+	getch();
+}

@@ -1,0 +1,45 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+struct student 
+{
+	int id;
+	char name[20];
+
+	struct stu_mark
+	{
+		char sub[20];
+		int m;
+	}mark;
+};
+
+void disp(struct student s1[])
+{
+	for (int a = 0; a < 2; a++)
+	{
+		cout << "\nid is " << s1[a].id;
+		cout << "\nname is " << s1[a].name;
+		cout << "\nsub is " << s1[a].mark.sub;
+		cout << "\nmark is " << s1[a].mark.m;
+	}
+}
+
+void main()
+{
+	struct student s1[2];
+
+	for (int a = 0; a < 2; a++)
+	{
+	cout << "Enter id ";
+	cin >> s1[a].id;
+	cout << "Enter name ";
+	cin >> s1[a].name;
+	cout << "Enter sub ";
+	cin >> s1[a].mark.sub;
+	cout << "Enter marks ";
+	cin >> s1[a].mark.m;
+	}
+	disp(s1);
+	getch();
+}

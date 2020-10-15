@@ -1,0 +1,28 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int age[5];
+
+	for (int a = 1; a <= 5; a++)
+	{
+	printf("Enter age \n");
+	scanf("%d",&age[a]);
+
+	if ( age[a] >= 14 && age[a] <=20 )
+	{
+		printf("Teen age \n");
+	}
+	else if ( age[a] >= 21 && age[a] <= 40)
+	{
+		printf("soilder \n");
+	}
+	else
+	{
+		printf("Old \n");
+	}
+	}
+	getch();
+}

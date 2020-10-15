@@ -1,0 +1,27 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void avg(float a,float b,float c)
+{
+	float total;
+	total = (a+b+c)/300;
+	cout<< "Avg is: \n" << total << endl;
+}
+
+void per(float a,float b,float c)
+{
+	float result;
+	result = (a+b+c)/300*100;
+	cout<< "Per is: \n" << result << endl;
+}
+
+void main()
+{
+	float x,y,z;
+	cout << "Enter three subject number \n";
+	cin >> x >> y >> z;
+	avg(x,y,z);
+	per(x,y,z);
+	getch();
+}

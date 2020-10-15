@@ -1,0 +1,38 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+
+void checking(int[]);
+
+
+void main()
+{
+	int grdinput[5];
+
+	for ( int a = 0; a < 5; a++)
+	{
+		printf("Enter roll no : %d \n", a+1);
+		scanf("%d",&grdinput[a]);
+	}
+	checking(grdinput);
+	getch();
+}
+
+
+void checking(int grd[])
+{
+
+	
+	for (int a = 0; a < 5; a++)
+	{
+		if(grd[a] >= 70)
+		{
+			printf("Roll no %d is eligible \n",a+1);
+		}
+		else
+		{
+			printf("Roll no %d is not eligible \n",a+1);
+		}
+	}
+}

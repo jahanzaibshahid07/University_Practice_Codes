@@ -1,0 +1,27 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int no,ans;
+
+	cout << "Enter prime number ";
+	cin >> no;
+
+	for (int a = 2; a <=no/2; a++)
+	{
+		ans = no % a;
+
+		if (ans == 0)
+		{
+			cout << "Not a prime number " << no;
+			getch();
+			exit(0);
+		}
+	}
+
+	cout << "prime number " << no; 
+
+	getch();
+}

@@ -1,0 +1,36 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int addsqr(int);
+float addsqr(float,float);
+
+void main()
+{
+	int s,total;
+	float a,b,result;
+
+	cout<<"Insert number: \n";
+	cin>>s;
+	total = addsqr(s);
+	cout<<"square of"<<s<<"is:"<<total<<endl;
+	cout<<"Insert two number:";
+	cin>>a>>b;
+	result = addsqr(a,b);
+	cout<<"addittion is:"<<result<<endl;
+	getch();
+}
+
+int addsqr(int x)
+{
+	int r;
+	r = (x*x);
+	return r;
+}
+
+float addsqr(float x,float y)
+{
+	float r;
+	r = (x+y);
+	return r;
+}

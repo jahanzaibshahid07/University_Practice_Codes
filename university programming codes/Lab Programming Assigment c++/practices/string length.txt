@@ -1,0 +1,12 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+void main()
+{
+	string a = "sir syed university of engineering";
+	int len = a.size();
+	cout << "size is " << len;
+	getch();
+}

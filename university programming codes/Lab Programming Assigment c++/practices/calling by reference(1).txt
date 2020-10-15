@@ -1,0 +1,26 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void cal(int& a,int& b, int& c) // calling by reference
+{
+	c = a + b;
+}
+void add(int& c)
+{
+	cout << "Ans is " << c; // output
+}
+void main()
+{
+	int x,y,z; 
+	cout << "Enter number \n";  // input
+	cin >> x;
+	cout << "Enter number \n";
+	cin >> y;
+	cal(x,y,z);
+	add(z);
+	getch();
+}
+
+X=================================================================================X
+

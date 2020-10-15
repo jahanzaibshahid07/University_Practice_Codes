@@ -1,0 +1,44 @@
+#include<iostream >
+#include<conio.h>
+using namespace std;
+
+
+void tax(int h,int v,float b)
+{
+	float amount=h+v+b;
+	printf(" The Total Taxable amount is : %f ",amount);
+
+}
+void tax(int h,int v)
+{
+	int amount=h+v;
+	printf(" The Total Taxable amount is : %d ",amount);
+
+}
+void tax(int h)
+{
+	printf(" The Total Taxable amount is : %d ",h);
+
+}
+
+
+void main ()
+{
+	int catg;
+	printf(" ----Tax Calculater---- ");
+	printf("\n Declare tax category :   ");
+	scanf("%d",&catg);
+	if(catg==3)
+	{
+	   tax(500,120,1000.99);
+	}
+		if(catg==2)
+	{
+	   tax(500,120);
+	}
+			if(catg==1)
+	{
+	   tax(500);
+	}
+getch();
+}

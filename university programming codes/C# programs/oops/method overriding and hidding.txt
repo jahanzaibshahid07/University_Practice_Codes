@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationui2
+{
+    class baseclass
+    {
+        public virtual void print()
+        {
+            Console.WriteLine("Its a base class ");
+        }
+    }
+
+    class derivedclass : baseclass
+    {
+        public override void print()  // base class ref var invoke derived class objects at run time is called poltporphism
+        {                           // override keyword override the method that is in the base class  
+            Console.WriteLine("Its a derived class");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            baseclass bc = new derivedclass(); // this is method overridding...
+            bc.print();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+xxx==============================================================================================xxx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    class baseclass
+    {
+        public virtual void print()
+        {
+            Console.WriteLine("im a baseclass ref var");
+        }
+    }
+
+    class derivedclass : baseclass
+    {
+        public new void print()  // new keyword intented to hide base class methed but the ref var is base class that's why base class method is called
+        {
+            Console.WriteLine("im a derivedclass ref var");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            baseclass b1 = new derivedclass(); // this is method hiding...
+            b1.print();
+
+
+            derivedclass d1 = new derivedclass(); 
+	    d1.print();  //that will hide the base class method
+
+            Console.ReadKey();
+        }
+
+    }
+}

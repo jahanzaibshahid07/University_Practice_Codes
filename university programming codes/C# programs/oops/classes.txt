@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl
+{
+    class animal
+    {
+        public static int count = 0; // static use to shares the data to different instance and access easily to use class name  
+
+        public string name;  // class variables 
+        public int age;       // public is access modifier 
+        public float happiesness;
+
+        public animal() // default class constractor.. 
+        {
+            name = "itilian labra";
+            age = 4;
+            happiesness = 0.25f;
+
+            count++;
+        }
+
+        public animal(string _name, int _age, float _happieness)  // class constrator of parameters 
+        {
+            name = _name;
+            age = _age;
+            happiesness = _happieness;
+            
+            count++;
+        }
+
+        public void create() // class function we must use public to use this function outside the class 
+        {
+            Console.WriteLine("name " + name);
+            Console.WriteLine("age " + age);
+            Console.WriteLine("happiesness " + happiesness);
+        }
+    }
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            animal dog = new animal(); // we create here instance. class data type and variable. 
+            dog.create();  //  to call function we access with variable . we access value in class use dog.name = "tomy"
+            Console.WriteLine();
+            
+            animal.count += 0;  // static could be access like this to use class name called animal.count and print.
+            Console.WriteLine("Animal of count: " + animal.count);
+            Console.WriteLine();
+            
+            animal cat = new animal("pussy cat", 2, 0.15f); // instance to use parameter method.
+            cat.create();
+            Console.WriteLine();
+
+            Console.WriteLine("Animal of count: " + animal.count);
+
+            Console.ReadKey();
+        }
+    }
+}

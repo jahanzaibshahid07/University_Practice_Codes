@@ -1,0 +1,57 @@
+// abstract classes are incomplete and they may have abstract member by using abstact keyword but not mandatory...
+// abstract member cannot have implementation and abstract class can only be used as base class and it cannot have instance...
+// if your class inherit from abstract class to provide implementation for all the abstract member
+// if you not provide implementation then class has to be marked abstract....
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    public abstract class customer
+    {
+        public abstract void print();     // without implementation
+    }
+
+    abstract class Program : customer
+    {
+        static void Main(string[] args)
+        {
+            Console.ReadKey();
+        }
+    }
+}
+
+xxx========================================================================xxx
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    public abstract class customer
+    {
+        public abstract void print();
+    }
+
+    class Program : customer
+    {
+        public override void print()
+        {
+            Console.WriteLine("print method");       // with implementation and you shuold use override keyword
+        }
+
+        static void Main(string[] args)
+        {
+            customer c1 = new Program();
+            c1.print();
+
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,84 @@
+// struct is value type where as class is refernce type
+// struct stored on the stack and class stored in the heap...
+// object ref var like c1 stored in the stack and objects themselves like customer are stored in the heap.... 
+// value type and ref var get destroyed immediately after the scoop has lost and removed from the memory but the object will be there on the heap in the memory.... 
+// value type you gets copy of value and do not affect the other value but when you call ref type you get ref of value that will affect other value..... 
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    public class customer
+    {
+        public int Id { set; get; }
+        public string Name { set; get; }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+            int i = 10;     // value type
+
+            if(i == 10)
+            {
+                int j;
+
+                customer c1 = new customer();
+                c1.Id = 10;                    // reference type
+                c1.Name = "jahanzaib";
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+xxx==================================================================================================xxxx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+    public class customer
+    {
+        public int Id { set; get; }
+        public string Name { set; get; }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 10;
+            int j = i ;  pass by value
+            j = j + 1;
+
+            Console.WriteLine("i = {0} && j = {1}",i,j);
+
+            customer c1 = new customer();
+            c1.Id = 10;
+            c1.Name = "rematwa";
+
+            customer c2 = c1;  //  same object but diff var c1 and c2 points te same object pass by ref
+
+            c2.Name = "jahanzaib";
+
+            Console.WriteLine("c1.name = {0} && c2.name = {1}",c1.Name,c2.Name);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+

@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplicationUl
+{
+    class employee
+    {
+        public string name;
+
+        public void printinformation()
+        {
+            Console.WriteLine("Name is " + name);
+        }
+    }
+
+    class fulltimeemployee : employee
+    {
+        public new void printinformation() // if you want to hidde base class member then you use new keywoard in childclass
+        {
+            base.printinformation();  //  if you want to access base class member again the you use base keywoard
+            Console.WriteLine("Name is " + name + " ~ constractor");
+        }
+
+    }
+
+    class halftimeemployee : employee
+    {
+        public void halfsalary()
+        {
+
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            employee fte = new fulltimeemployee(); // a parent class reference variable can point to a child class object but child class refernce variable cannot point to a parent class objects 
+            fte.name = "full time employee";
+            fte.printinformation();
+            ((employee)fte).printinformation();  // another practice of typecast method to access base class member 
+
+            halftimeemployee hte = new halftimeemployee();
+            hte.name = "half time employee";
+            hte.printinformation();
+
+            Console.ReadKey();
+        }
+    }
+}

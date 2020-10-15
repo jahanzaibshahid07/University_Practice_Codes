@@ -1,0 +1,21 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+void swap(int *a, int *b)
+{
+ int temp;
+ temp=*a; //*a=>value of a.
+ *a=*b;
+ *b=temp;
+ printf("\nThe Address of 'a' is  %x ",a);
+ printf("\nThe Address of 'b' is  %x ",b);
+ printf("\nThe value of 'a' is  %d ",*a);
+ printf("\nThe value of 'b' is  %d ",*b);
+}
+void main() 
+{  
+ int a=100, b=200;   
+ swap(&a, &b);  // passing value to function
+ getch();  
+}

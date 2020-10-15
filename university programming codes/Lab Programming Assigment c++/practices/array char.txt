@@ -1,0 +1,39 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	char name[10] ={'j','a','h','a','n','z','a','i','b','\0'};
+	cout<<name;
+	getch();
+}
+
+////////////////////////////////////////////////////////////// 
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	char jahanzaib[] = "my name is jahanzaib im from karachi and student of ssuet";
+	cout<<strlen(jahanzaib);
+	getch();
+}
+//////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+void main()
+{
+	char name[20];
+    char sport[20];
+
+	cout<<"Enter name and sport: \n";
+	cin.getline(name, 20);
+	cin.getline(sport, 20);
+	cout<< name << " loves " << sport << endl;
+	getch();
+}

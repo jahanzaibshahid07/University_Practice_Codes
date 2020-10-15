@@ -1,0 +1,21 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+class printclass    // class name 
+{
+public:            // in public we can assiss function outside of the void() 
+	void print()   // its a function 
+	{
+		cout << "my name is jahanzaib ";
+	}
+};
+
+void main()
+{
+	printclass printobj;  // class name and object
+
+	printobj.print();     // we use object to use their data
+
+	getch();
+}

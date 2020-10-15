@@ -1,0 +1,43 @@
+#include<iostream>
+#include<stdio.h>
+#include<conio.h>
+using namespace std;
+
+void checking(int[]);
+
+void main()
+{   
+  printf("\n Enter Roll no wise percentage  :");
+  int grdinput[5];
+  for(int a=0; a<5; a++)
+  {
+   printf(" \nEntre Roll no : %d Grade :" ,a+1);	 
+   scanf("%d",&grdinput[a]);
+  }
+  checking(grdinput);
+
+	
+	getch();
+
+
+
+}
+void checking(int grade[5])
+{
+	
+	for(int a=0; a<5; a++)
+	{
+		if(grade[a]>=80)
+		{
+		   printf("\nRoll No. %d is Eligible ",a+1);
+		}
+		else
+		{
+		printf("\nRoll No. %d is Not Eligible ",a+1);
+		}
+	
+	
+	}
+
+
+}

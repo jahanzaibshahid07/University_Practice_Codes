@@ -1,0 +1,17 @@
+#include<iostream >
+#include<conio.h>
+using namespace std;
+int sum( int a,int b=100 )
+{
+  return a+b;
+}
+void main ()
+{
+// local variable declaration:
+int x = 100;
+int y = 200;
+int result=sum(x,y);
+// calling a function to add the values.
+cout << "Total value is :" << result << endl;
+getch();
+}

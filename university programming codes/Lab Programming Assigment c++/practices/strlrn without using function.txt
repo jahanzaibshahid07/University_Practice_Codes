@@ -1,0 +1,17 @@
+#include < iostream>
+#include <conio.h>
+#include <stdio.h>
+using namespace std;
+
+void main()
+{
+	char str[100];
+
+	printf("Enter string ");
+	scanf("%s",str);
+
+	for (int a = 0; str[a]!='\0'; ++a)
+		printf("\nlength of string is : %d",a);
+
+	getch();
+}

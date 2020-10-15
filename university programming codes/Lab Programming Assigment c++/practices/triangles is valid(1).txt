@@ -1,0 +1,36 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void triangle(int a, int b, int c) // function
+{
+	int result;
+
+	result = a+b+c;
+
+	cout<< "Triangle is: " << result << endl;
+
+	if (result == 180)
+	{
+		cout<< "Triangle is valid "; 
+	}
+
+	else 
+	{
+		cout<< "Triangle is not valid ";
+	}
+}
+
+void main() 
+{
+	int x,y,z;
+
+	cout << "Enter three angles: \n";
+
+	cin>> x >> y >> z;
+
+	triangle(x,y,z);
+
+	getch();
+}
+

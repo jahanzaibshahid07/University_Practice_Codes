@@ -1,0 +1,29 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int *p;                               // declare pointer 
+	int arr[5],total = 0;
+
+	cout << "Enter 5 element ";
+
+	for (int a = 0; a < 5; a++)
+	{
+		cin >> arr[a];                    // input of array 
+	}
+
+	p = &arr[0];                        // assigned a base address
+
+	cout << "Element ares ";
+
+	for (int a = 0; a < 5; a++)
+	{
+		cout << *p << endl;         // output of array
+		total = total + *p;        // + the element
+		p++;                      // moves to next element 
+	}
+	cout << "total = " << total;
+	getch();
+}

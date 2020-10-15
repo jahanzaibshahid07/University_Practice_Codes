@@ -1,0 +1,25 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+void main()
+{
+	string a;
+	string arr[] = {"pakistan","india","iran"};
+	cout << "Enter country ";
+	cin >> a;
+	if (arr[0] == a)
+	{
+		cout << a;
+	}
+	else if(arr[1] == a)
+	{
+		cout << a;
+	}
+	else if (arr[2] == a)
+	{
+		cout << a;
+	}
+	getch();
+}

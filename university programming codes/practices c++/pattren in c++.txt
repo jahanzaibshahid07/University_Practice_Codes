@@ -1,0 +1,171 @@
+// hollow square pattern 
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void main()
+{
+	int size;
+
+	cout << "Enter the lenght of the square ";
+	cin >> size;
+
+	for (int r = 0; r <= size; r++)
+	{
+		for(int c = 0; c <= size; c++)
+		{
+			if (r == 0 || r == size || c == 0 || c == size)
+			{
+				cout << "*";
+			}
+			else
+			{
+				cout << " ";
+			}
+		}
+		cout << endl;
+	}
+	getch();
+}
+
+
+
+// right side triangle of stars 
+
+
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void main()
+{
+	int size;                                
+
+	cout << "Enter the number of rows ";
+	cin >> size;
+
+	for(int c = 1; c <= size; c++)
+	{
+		for(int r = 1; r <= c; r++)      // row less then and equal to col
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+	getch();
+}
+
+
+
+// upside down rigth angle triangle 
+
+
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void main()
+{
+	int size;
+	cout << "Enter the number of stars ";
+	cin >> size;
+	int space = size;
+	for(int c = 0; c <= size; c++)
+	{
+		for(int r = 0; r <= space; r++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+		space--;
+	}
+	getch();
+}
+
+// pyramid
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void main()
+{
+	int size;
+	cout << "Enter size ";
+	cin >> size;
+	int space = size;
+
+	for(int r = 1; r <= size; r++)
+	{
+		for(int c = 1; c <= space; c++)
+		{
+			cout << " ";
+		}
+		space--;
+
+		for(int c = 1; c <= r*2-1; c++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+	getch();
+}
+
+
+// diamond
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void main()
+{
+	int givenno;
+
+	cout << "Enter the lenght ";
+	cin >> givenno;
+	int space = givenno; 
+
+	for (int r = 1; r <= givenno; r++)
+	{
+		for(int c = 1; c < space; c++)
+		{
+			cout << " ";
+		}
+		space--;
+		for (int c = 1; c <= r*2-1; c++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+
+	for (int r = givenno - 1; r >= 1; r--)
+	{
+		for(int c = 1; c <= givenno - r; c++)
+		{
+			cout << " ";
+		}
+
+		for (int c = 1; c <= r*2-1; c++)
+		{
+			cout << "*"; 
+		}
+		cout << endl;
+	}
+		getch();
+}
+
+
+
+
+
+

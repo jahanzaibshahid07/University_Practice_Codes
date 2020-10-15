@@ -1,0 +1,74 @@
+#include <iostream>
+#include <conio.h>
+#include <fstream>
+
+
+using namespace std;
+
+void main()
+{
+	int id;
+	char name[20];
+
+	ofstream outfile("player.txt");
+
+	cout << "Enter id ";
+	cin >> id;
+	cout << "Enter name ";
+	cin >> name;
+
+	outfile << id << endl;
+	outfile << name << endl;
+
+	outfile.close();
+
+	ifstream infile("data.txt");
+
+	infile >> id;
+	infile >> name;
+
+	cout << "\nplayer id " << id; 
+	cout << "\nplayer name " << name;
+
+	infile.close();
+ 
+	getch();
+}
+
+
+xx==========================================xx
+
+#include <iostream>
+#include <conio.h>
+#include <fstream>
+using namespace std;
+
+void main()
+{
+	char name[20];
+	int no;
+
+	ofstream outfile("chipa.txt");
+
+	cout << "Enter patient name ";
+	cin.getline(name,20);
+	cout << "Enter room no ";
+	cin >> no;
+
+	outfile << name << endl;
+	outfile << no << endl;
+
+	outfile.close();
+
+	ifstream infile("chipa.txt");
+
+	infile.getline(name,20);
+	infile >> no;
+
+	cout << "patient name " << name;
+	cout << "\npatient room no " << no;
+
+	infile.close();
+
+	getch();
+}

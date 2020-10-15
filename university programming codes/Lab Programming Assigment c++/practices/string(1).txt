@@ -1,0 +1,22 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+void main()
+{
+	string s1 = "jahanzaib ";
+	string s2 = "shahid";
+	string s3;
+	int len;
+	// copy strcpy
+	s3 = s1;
+	cout << "s3 is " << s3 << endl;
+	// concatenation 
+	s3 = s1 + s2;
+	cout << "s1 + s2 is " << s3 << endl;
+	// total lenght of s3 
+	len = s3.size();
+	cout << "s3.size() is " << len << endl;
+	getch();
+}

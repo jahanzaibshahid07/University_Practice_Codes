@@ -1,0 +1,45 @@
+#include<iostream>
+#include<conio.h>
+#include<stdio.h>
+
+using namespace std;
+
+void salinc(int,int,int);
+
+void main()
+{
+	int a_sal;
+	int a_ratio;
+	int year;
+        printf("\n=== Salary Increment Ratio ===");	
+	printf( "\n Enter Salary : " );
+	scanf("%d",&a_sal);
+	printf( "\n Enter Incrememt ration : " );
+	scanf("%d",&a_ratio);
+	printf( "\n Enter Count of Year : " );
+	scanf("%d",&year);
+        salinc(a_sal,a_ratio,year);
+	getch();
+}
+
+
+void salinc(int sal,int ratio,int yrs)
+{
+	int choice;
+	for(int a=1; a<=yrs; a++)
+	{
+	   	sal = sal+(sal*ratio/100);
+		printf("\n Year : %d Updated Salary : %d",a,sal);
+	}
+	printf(" Enter 1 for continue... or hit 0 for exit ");
+	scanf("%d",&choice);
+	while(choice==1)
+	{
+	  main(); // this line will reset the program
+	 printf(" This line would not be compile... ");
+	}
+	if(choice!=1)
+	{
+	  exit(0);
+	}
+}
