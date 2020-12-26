@@ -1,0 +1,81 @@
+#include <iostream>
+#include <cstdio>
+#include <conio.h>
+using namespace std;
+
+struct BSTNode
+{
+	int data;
+	BSTNode *left;
+	BSTNode *right;
+};
+
+struct BSTNode *GetNewNode(int data)
+{
+	BSTNode *node = new BSTNode();
+	node->data = data;
+	node->left = NULL;
+	node->right = NULL;
+	return node;
+}
+
+struct BSTNode *Insert(BSTNode *root,int data)
+{
+	if(root == NULL)
+	{
+		root = GetNewNode(data);
+	}
+	else if(data <= root->data)
+	{
+		root->left = Insert(root->left,data);
+	}
+	else
+	{
+		root->right = Insert(root->right,data);
+	}
+	return root;
+}
+
+struct BSTNode *Find(BSTNode *root,int data)
+{
+	if(root == NULL)
+	{
+		return NULL;
+	}
+	else if(data < root->data)
+	{
+		return (Find(root->left,data));
+	}
+	else if(data > root->data)
+	{
+		return (Find(root->right,data));
+	}
+	return root;
+}
+
+
+void main()
+{
+	int num;
+	
+	BSTNode *root = NULL;
+	root = Insert(root,15);
+	root = Insert(root,6);
+	root = Insert(root,20);
+	root = Insert(root,25);
+	root = Insert(root,11);
+
+	cout << "Enter number to search ";
+	cin >> num;
+
+	if(Find(root,num))
+	{
+		cout << "Found " << num;
+	}
+	else
+	{
+		cout << "Not found ";
+	}
+
+	getch();
+}

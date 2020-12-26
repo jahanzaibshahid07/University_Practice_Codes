@@ -1,0 +1,128 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+public class Node
+{
+	public int data;
+	public Node next;
+	public Node(int data)
+	{
+		this.data = data;
+		next = null;
+	}
+}
+
+
+public class Linkedlist
+{
+	Node head;
+	
+	public void Insert(int data)
+	{
+		Node newnode = new Node(data);
+		newnode.next = head;
+		head = newnode;
+	}
+	public void InsertAtTheEnd(int data)
+	{
+		Node newnode = new Node(data);
+
+		if (head == null)
+		{
+			head = newnode;
+		}
+		else
+		{
+			Node temp = head;
+
+			while (temp.next != null)
+			{
+				temp = temp.next;
+			}
+
+			temp.next = newnode;
+		}
+	}
+	public void InsertAtNthPosition(int data, int pos)
+    {
+		Node temp = head;
+		Node newnode = new Node(data);
+
+		if(pos == 1)
+        {
+			head = newnode;
+			return;
+        }
+
+        for (int i = 0; i < pos - 2; i++)
+        {
+			temp = temp.next;
+        }
+
+		newnode.next = temp.next;
+		temp.next = newnode;
+    }
+	public void RemoveNodeAtNthPosition(int pos)
+    {
+		Node temp = head;
+		Node deletenode;
+
+		if (pos == 1)
+		{
+			head = temp.next;
+		}
+		else
+		{
+			for (int i = 0; i < pos - 2; i++)
+			{
+				temp = temp.next;
+			}
+
+			deletenode = temp.next;
+			temp.next = temp.next.next;
+			
+		}
+	}
+	public void display()
+	{
+		Node temp = head;
+
+        while (temp != null)
+        {
+            Console.WriteLine("List : " + temp.data);
+			temp = temp.next;
+        }
+
+        Console.WriteLine();
+	}
+}
+
+
+public class Program
+{
+	public static void Main()
+	{
+
+		Linkedlist list = new Linkedlist();
+		int n,ele,pos;
+
+        Console.WriteLine("Enter Total Element : ");
+		n = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine("Enter Element : ");
+			ele = Convert.ToInt32(Console.ReadLine());
+			list.InsertAtTheEnd(ele);
+			list.display();
+		}
+
+		Console.WriteLine("Remove Position : ");
+		pos = Convert.ToInt32(Console.ReadLine());
+		list.RemoveNodeAtNthPosition(pos);
+		list.display();
+
+		Console.ReadLine();
+	}
+}

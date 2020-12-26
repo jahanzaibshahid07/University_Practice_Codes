@@ -1,0 +1,135 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+struct Node 
+{
+	int data;
+	Node * next;
+};
+
+struct Node *head,*p,*tail;
+
+void InsertNodeAtTheFirst(int x)
+{
+	Node *temp = new Node;// create a new node
+	temp->data = x;      // insert the data part of the node
+	temp->next = head;  // New node should be connected to the first node, which means the head. This can be achieved by putting the address of the head in the next field of the new node.
+	head = temp;       //  New node should be considered as a head. It can be achieved by declaring head equals to a new node.
+}
+
+
+void InsertAtTheEndPosition(int value)
+{
+	  Node *temp = new Node;
+          temp->data = value;
+	  temp->next = NULL;
+	  p = head;
+	  if(head == NULL)
+	  {
+		  head = temp;
+		  tail = temp;
+		  temp = NULL;
+	  }
+	  else
+	  {
+		while(p->next != NULL)
+		{
+		  p = p->next;
+		}
+		p->next = temp;
+		temp->next = NULL;
+	  }
+}
+
+void Insert_Position(int pos,int value)
+{
+	Node *temp1 = new Node; // here we create a first node memory block
+	temp1->data = value;   // fill the data part of the node
+	temp1->next = NULL;   // next part of the node is null
+
+	if(pos == 1) // if the user enter insert first node 
+	{
+		temp1->next = head; 
+		head = temp1;
+		return;
+	}
+
+	Node *temp2 = head;  // here we create temparory var which is initilize to head 
+
+	for(int i = 1; i < pos - 1; i++)  
+	{
+		temp2 = temp2->next; // here condition is nth - 1 node means that we traverse the position which is user demand and insert the node after the position
+
+	}
+	temp1->next = temp2->next;// new node hold the address of the next node which it is points too
+	temp2->next = temp1;     // new node's address hold the previous pointer that points the new node
+}
+
+
+void PrintNode()
+{
+	Node *temp1 = head;
+	
+	if(temp1 == NULL)
+	{
+		cout << "list is empty";
+	}
+	else
+	{
+		cout << " List : ";
+		while(temp1 != NULL)
+		{
+			cout << " " << temp1->data;
+			temp1 = temp1->next;
+		}
+		cout << endl;
+	}
+	
+}
+
+void main()
+{
+	head = NULL;
+	tail = NULL;
+
+	int ch,value,pos;
+
+	while(1)
+	{
+		cout << "1 for insert node at first \n2 for insert node at end \n3 for insert node at the nth node \n4 for display the node \n5 for end the program \n";
+		cin >> ch;
+
+		switch(ch)
+		{
+		case 1:
+			cout << "Enter the node data ";
+			cin >> value;
+			InsertNodeAtTheFirst(value);
+			break;
+		case 2:
+			cout << "Enter the node data ";
+			cin >> value;
+			InsertAtTheEndPosition(value);
+			break;
+		case 3:
+			cout << "Enter the node data ";
+			cin >> value;
+			cout << "Enter the position of the node ";
+			cin >> pos;
+			Insert_Position(pos,value);
+			break;
+		case 4:
+			PrintNode();
+			break;
+		case 5:
+			exit(0);
+			break;
+		case 6:
+			cout << "Wrong Choice";
+			break;
+		}
+	}
+	getch();
+}

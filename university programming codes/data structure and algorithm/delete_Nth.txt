@@ -1,0 +1,90 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+struct Node  // data type 
+{
+	int data;
+	Node *next;
+};
+
+struct Node *head; // head is global var we can use anywhere in the program
+
+void InsertNodeAtTheFirst(int x)
+{
+	Node *temp = new Node;// create a new node
+	temp->data = x;      // insert the data part of the node
+	temp->next = head;  // New node should be connected to the first node, which means the head. This can be achieved by putting the address of the head in the next field of the new node.
+	head = temp;       //  New node should be considered as a head. It can be achieved by declaring head equals to a new node.
+}
+
+void PrintNode()
+{
+	struct Node *temp = head;  //local var to stored the address of the head.. we dnt want to modify head beacuse we will lose the ref of the first node
+	
+	cout << "list : ";
+	
+	while(temp != NULL)       
+	{
+		cout << " " << temp->data;  //print the data part in the link list
+		temp = temp->next;        //here we traverse the link list mean keep going to the next node
+	}
+	cout << endl;
+}
+
+void Delete_NthNode(int pos)
+{
+	Node *current = new Node;
+	Node *previous = new Node;
+	current = head;
+
+	if(pos == 1)
+	{
+		Node *temp;
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
+
+	for(int a = 0; a < pos - 1; a++)
+	{
+		previous = current;
+		current = current->next;
+	}
+	previous->next = current->next;
+}
+
+
+void main()
+{
+	head = NULL;
+
+	int n,x,pos,del;
+	
+	cout << "how many node you want to create ";
+	cin >> n;
+	
+	for(int i = 0; i < n; i++)
+	{
+		cout << "Enter the node part ";
+		cin >> x;
+		InsertNodeAtTheFirst(x);
+		PrintNode();
+		
+		cout << "Enter 1 for delete node ";
+		cin >> del;
+
+		if(del == 1)
+		{
+			cout << "Enter the positon of the node you delete ";
+			cin >> pos;
+			Delete_NthNode(pos);
+		}
+		else
+		{
+			cout << "Wrong choice " << endl;
+		}
+	}
+	getch();
+}

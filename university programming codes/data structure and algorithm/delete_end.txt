@@ -1,0 +1,98 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+struct Node
+{
+	int data;
+	Node *next;
+};
+
+struct Node * head,*tail;
+
+void InsertAtTheEndPosition(int x)
+{
+	  Node *temp = new Node;
+      temp->data = x;
+      temp->next = NULL;
+      
+	  if(head==NULL)  //we want to know what would happen if the linked list is still empty
+      {
+        head=temp;  //If there is just one node created then it is called both head and tail. 
+        tail=temp;
+        temp=NULL; //last node is the null..
+      }
+      
+	  else
+      {	
+        tail->next=temp; //Linking the newly created node with tail node. Means passing the address of a new node to the next pointer of a tail node.
+        tail=temp; //The tail pointer should always point to the last node. So we will make our tail pointer equal to a new node.
+      }           // here update 2 pointers
+}
+
+void Delete_End()
+{
+	Node *current = new Node;                // current point the last node
+	Node *previous = new Node;    // previous points the second last node 
+        current = head;
+
+	while(current->next != NULL) 
+	{
+		previous = current;        
+		current = current->next;  // current start with head and end to last node..
+	}
+	
+	tail = previous;       // second last add stored in tail 
+	previous->next = NULL;  // last node is null
+	delete(current); // delete last node
+}
+
+void PrintNode()
+{
+	Node * temp1 = head;
+	
+	cout << " List : ";
+	
+	while(temp1 != NULL)
+	{
+		cout << " " << temp1->data;
+		temp1 = temp1->next;
+	}
+	
+	cout << endl;
+}
+
+void main()
+{
+	head = NULL;
+	tail = NULL;
+	
+	int n,x,del;
+	cout << "how many node you want to create ";
+	cin >> n;
+	
+	for(int i = 0; i < n; i++)
+	{
+		cout << "Enter node data ";
+		cin >> x;
+		
+		InsertAtTheEndPosition(x);
+		
+		PrintNode();
+		
+		cout << "Enter 1 for delete ";
+		cin >> del;
+
+		if(del == 1)
+		{
+			Delete_End();
+		}
+		else
+		{
+			cout << "wrong " << endl;
+		}
+	}
+	
+	getch();
+}

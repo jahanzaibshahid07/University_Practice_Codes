@@ -1,0 +1,71 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+struct Node
+{
+	int data;
+	Node *next;
+};
+
+struct Node * head;
+
+void Insert_Position(int pos,int value)
+{
+	Node *temp1 = new Node; // here we create a first node memory block
+	temp1->data = value;   // fill the data part of the node
+	temp1->next = NULL;   // next part of the node is null
+
+	if(pos == 1) // if the user enter insert first node 
+	{
+		temp1->next = head; 
+		head = temp1;
+		return;
+	}
+
+	Node *temp2 = head;  // here we create temparory var which is initilize to head 
+
+	for(int i = 1; i < pos - 1; i++)  
+	{
+		temp2 = temp2->next; // here condition is nth - 1 node means that we traverse the position which is user demand and insert the node after the position
+
+	}
+	temp1->next = temp2->next;// new node hold the address of the next node which it is points too
+	temp2->next = temp1;     // new node's address hold the previous pointer that points the new node
+}
+
+void PrintNode()
+{
+	Node * temp1 = head;
+	
+	cout << " List : ";
+	
+	while(temp1 != NULL)
+	{
+		cout << " " << temp1->data;
+		temp1 = temp1->next;
+	}
+	
+	cout << endl;
+}
+
+void main()
+{
+	head = NULL;
+	
+	int n,value,pos;
+	cout << "how many node you want to create ";
+	cin >> n;	
+
+	for(int i = 0; i < n; i++)
+	{
+		cout << "Enter node data ";
+		cin >> value;
+		cout << "Enter position";
+		cin >> pos;
+		Insert_Position(pos,value);
+	    PrintNode();
+	}
+	getch();
+}

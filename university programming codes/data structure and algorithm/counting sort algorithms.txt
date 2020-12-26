@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string.h>
+#include <conio.h>  
+
+using namespace std;
+
+void CountingSort(int A[],int N,int B[])
+{
+	const int K = 10;
+	int i,j;
+	int C[K];
+
+	for(i = 0; i < K; i++)
+		C[i] = 0;
+	for(j = 0; j < N; j++)  // determine the index of the digits called frequency
+		C[A[j]] = C[A[j]] + 1; 
+	for(i = 1; i < K; i++) //intuative frequeucy 4 ya 4 se choti values ktni bar arahi hai 
+		C[i] = C[i] + C[i-1];
+	for(j = N-1; j>=0; j--) // 7 ya 7 se choti jitni hai waha wo array k index per assign hojae
+	{
+		B[C[A[j]]-1] = A[j];
+		C[A[j]] = C[A[j]] - 1;
+	}
+}
+
+
+void main()
+{
+	int A[] = {8,7,6,5,4,9,8,7,6,5,4,3,2,1,0};
+	int B[15];
+	int N = 15;
+	int i;
+	CountingSort(A,N,B);
+	for(i = 0; i < N;i++)
+	{
+		cout << B[i] << endl;
+	}
+	getch();
+}

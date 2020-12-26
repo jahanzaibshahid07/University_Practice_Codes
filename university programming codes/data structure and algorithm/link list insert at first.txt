@@ -1,0 +1,55 @@
+// pointer jis type ka hoga use type ka address contain krta h...
+// you can create your size of the node..
+// linked list node is a data type and always contain pointer to points the other variable..
+
+#include <iostream>
+#include <conio.h>  // insert at the begining
+
+using namespace std;
+
+struct Node  // data type 
+{
+	int data;
+	Node *next;
+};
+
+struct Node *head; // head is global var we can use anywhere in the program
+
+void InsertNodeAtTheFirst(int x)
+{
+	Node *temp = new Node;// create a new node
+	temp->data = x;      // insert the data part of the node
+	temp->next = head;  // New node should be connected to the first node, which means the head. This can be achieved by putting the address of the head in the next field of the new node.
+	head = temp;       //  New node should be considered as a head. It can be achieved by declaring head equals to a new node.
+}
+
+void PrintNode()
+{
+	struct Node *temp = head;  //local var to stored the address of the head.. we dnt want to modify head beacuse we will lose the ref of the first node
+	
+	cout << "list : ";
+	
+	while(temp != NULL)       
+	{
+		cout << " " << temp->data;  // print the data part in the link list
+		temp = temp->next;  // here we traverse the link list mean keep going to the next node
+	}
+	
+	cout << endl;
+}
+
+void main()
+{
+	head = NULL;
+	int n,x;
+	cout << "how many number ";
+	cin >> n;
+	for(int i = 0; i < n; i++)
+	{
+		cout << "Enter the number ";
+		cin >> x;
+		InsertNodeAtTheFirst(x);
+		PrintNode();
+	}
+	getch();
+}

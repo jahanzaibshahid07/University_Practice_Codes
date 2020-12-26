@@ -1,0 +1,44 @@
+// a linear array begins at the begining of the array and continue until the item is found or the entire list has been  search...
+
+
+#include <iostream>
+#include <conio.h>  
+
+using namespace std;
+
+void LinearSearch(int Arr[],int n,int item)
+{
+	int i;
+	
+	for(i = 0; i < n; i++)
+	{
+		if(Arr[i] == item)
+		{
+			cout << "Element found : " << item;
+			cout << "\nElement position " << i + 1;
+			break;
+		}
+	}
+	if(i == n)
+		cout << "Element not found : ";
+}
+
+
+void main()
+{
+	int Arr[100],i,item,n;
+
+	cout << "Enter no of element : \n";
+	cin >> n;
+
+	for(i = 0; i  < n; i++)
+	{
+		cin >> Arr[i];
+	}
+
+	cout << "Enter element to search : ";
+	cin >> item;
+	LinearSearch(Arr,n,item);
+
+	getch();
+}

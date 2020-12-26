@@ -3,6 +3,127 @@
 // if your class inherit from abstract class to provide implementation for all the abstract member
 // if you not provide implementation then class has to be marked abstract....
 
+// abstract methods must be implement in childclass and access both by parent and child object
+// Parentclass ref var can make Child class object but it does not access
+// childclass methods but if Parentclass method is overriden in Childclass
+// then Childclass overriden method will consider in ParentClass
+// abstract classes can inherit from interface
+
+
+xxx ====================================================================================== xxx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+
+namespace InterviewPractice
+{
+ 
+    public abstract class AbsParentClass 
+    {
+        public void Parentsum1()
+        {
+            Console.WriteLine("Parentsum1");
+        }
+
+        public virtual void Parentsub1()
+        {
+            Console.WriteLine("Parentsub1");
+        }
+
+        public abstract void ParentMul(int a, int b);
+
+        public abstract void ParentDiv(int a, int b);
+
+        //public void print()
+        //{
+        //    sum1();
+        //    sub1();
+        //}
+    }
+
+    public class ChildClass : AbsParentClass
+    {
+        public void Childsum2()
+        {
+            Console.WriteLine("Childsum2");
+        }
+
+        public virtual void Childsub2()
+        {
+            Console.WriteLine("Childsub2");
+        }
+
+        //public override void Parentsub1()
+        //{
+        //    Console.WriteLine("Override Parentsub1");
+        //}
+
+        public override void ParentDiv(int a, int b)
+        {
+            Console.WriteLine("Div of a and b : " + (a/b));
+        }
+
+        public override void ParentMul(int a, int b)
+        {
+            Console.WriteLine("Mul of a and b : " + (a*b));
+        }
+
+        //public void print1()
+        //{
+        //    sum1();
+        //    sub1();
+        //    sub2();
+        //    sum2();
+        //}
+    }
+
+    class Program
+    {
+     
+        static void Main(string[] args)
+        {
+            //AbsParentClass pc = new AbsParentClass();
+            //pc.print();
+            //pc.sum1();s
+            //pc.sub1();
+            //Console.WriteLine("Parent end");
+
+            ChildClass cc = new ChildClass();
+
+            cc.Childsub2();
+            cc.Childsum2();
+            cc.Parentsub1();
+            cc.Parentsum1();
+            cc.ParentMul(10,2);
+            cc.ParentDiv(50,5);
+
+            Console.WriteLine("Child end");
+
+            // abstract methods must be implement in childclass and access both by parent and child object
+            // Parentclass ref var can make Child class object but it does not access
+            // childclass methods but if Parentclass method is overriden in Childclass
+            // then Childclass overriden will consider in ParentClass 
+           
+            AbsParentClass nt1 = new ChildClass();
+            nt1.Parentsub1();
+            nt1.Parentsum1();
+            nt1.ParentMul(5,10);
+            nt1.ParentDiv(100,20);
+
+            Console.WriteLine("Parent can point to Child end");
+
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+xxx======================================================================================================xxx
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

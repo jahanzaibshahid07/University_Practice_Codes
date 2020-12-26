@@ -1,0 +1,76 @@
+#include <iostream>
+#include<conio.h>
+#include<stdio.h>
+#include<stdlib.h>
+
+using namespace std;
+
+struct Node
+{
+	int data;
+	Node *left;
+	Node *right;
+};
+
+struct Node *NewNode(int data) // function with struct Node return type. 
+{
+	Node *node = new Node(); // here new node is created 
+	node->data = data;
+	node->left = NULL;       // at the beg node left and right part is NULL
+	node->right = NULL;
+	return node;
+}
+
+void PreOrder(struct Node *root) // this function is preorder traversal and we pass node pointer as argumment
+{
+	if(root == NULL)
+	{
+		return;
+	}
+	cout << root->data;
+	PreOrder(root->left);
+	PreOrder(root->right);
+}
+
+void InOrder(struct Node *root)
+{
+	if(root== NULL)
+	{
+		return;
+	}
+	InOrder(root->left);
+	cout << root->data;
+	InOrder(root->right);
+}
+
+void PostOrder(struct Node *root)
+{
+	if(root == NULL)
+	{
+		return;
+	}
+	PostOrder(root->left);
+	PostOrder(root->right);
+	cout << root->data;
+}
+
+void main()
+{
+
+	struct Node *root = NewNode(1); // here we create pointer var and stored node address to pass into function 
+	root->left = NewNode(2);
+	root->right = NewNode(3);
+	root->left->left = NewNode(4);
+	root->right->right = NewNode(5);
+
+	cout << "\nPreOrder Binary Tree : \n";
+	PreOrder(root);
+	
+	cout << "\nInOrder Binary Tree : \n";
+	InOrder(root);
+	
+	cout << "\nPostOrder Binary Tree : \n";
+	PostOrder(root);
+
+	getch();
+}

@@ -1,0 +1,102 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;  // sum of the natural number
+
+int FindSum(int a)  // in recursion function call it self and saved more memry than other but it reduce complexcity of the problm
+{
+	int ans;
+	
+	if(a == 1)
+	{
+		return 1;
+	}
+	else
+	{
+		ans = a + FindSum(a - 1); 
+		return ans;
+	}
+}
+
+void main()
+{
+	int a;
+	cout << "Enter range ";
+	cin >> a;
+	cout << "Sum : " << FindSum(a); // sum of the natural number 
+	getch();
+}
+
+
+xxx=======================================================================================xxx
+
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int Fib(int n)                  // fabonacci series in recursion
+{ 
+	if(n == 1 || n == 2)
+	{
+		return 1;
+	}
+	else
+	{
+		return Fib(n -1) + Fib(n - 2);
+	}
+}
+
+void main()
+{
+	int n;
+	cout << "Enter the range of the fib ";
+	cin >> n;
+
+	for(int a = 1; a <= n; a++)
+	{
+		cout << Fib(a) << endl;
+	}
+
+	getch();
+}
+
+
+xxx==========================================================xxx
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int GCD(int a,int b)  // Greater Common Division
+{
+	if(a == b)  // if both value are return any value
+	{
+		return a;
+	}
+	else if(a%b == 0) //  if a is big and ans is zero  and return small value b
+	{
+		return b;
+	}
+	else if(b%a == 0) // if b is big and ans is zero  and return small value a
+	{
+		return a;
+	}
+	
+	if(a > b)
+	{
+		return GCD(a%b,b); // if a > b then we apply recursion to find GCD
+	}
+	else
+	{
+		return GCD(a,b%a); // b > a then we apply recursion to find GCD 
+	}
+}
+
+void main()
+{
+	cout << "GCD " << GCD(6,2);
+	getch();
+}

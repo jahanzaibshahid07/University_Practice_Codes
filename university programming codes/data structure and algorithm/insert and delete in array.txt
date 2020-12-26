@@ -1,0 +1,73 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void  main()
+{
+	int la[10] = {0,1,2,3,4};
+	int n,j,k,item;
+
+	cout << "Enter number of element : \n";
+	cin >> n;
+	cout << "Enter item : \n";
+	cin >> item;
+	cout << "Enter the item position : \n";
+	cin >> k;
+
+	j = n; // remember array start with zero
+
+	while(j >= k)
+	{
+		la[j+1] = la[j]; // here we downward the array element for empty space for new element 
+		j--;
+	}
+
+	la[k] = item; // assigned the element where user enter
+	n = n +1 ;
+
+	cout << "After insertion : \n";
+
+	for(int a = 0; a < n; a++)
+	{
+		cout << la[a] << endl;
+	}
+
+	getch();
+}
+
+xxx==============================================================xxx
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void  main()
+{
+	int la[10] = {0,1,2,3,4};
+	int n,j,k,item;
+
+	cout << "Enter number of element : \n";
+	cin >> n;
+	//cout << "Enter item : \n";
+	//cin >> item;
+	cout << "Enter the item position : \n";
+	cin >> k;
+
+	for(j = k; j < n; j++)
+	{
+		la[j] = la[j+1]; // here we upward the element to overlap the value of user enter
+	}
+
+	n = n - 1;
+
+	cout << "After insertion : \n";
+
+	for(int a = 0; a < n; a++)
+	{
+		cout << la[a] << endl;
+	}
+
+	getch();
+}

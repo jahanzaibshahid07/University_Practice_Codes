@@ -1,3 +1,7 @@
+// static class only have static methods and fields 
+// static class don't create instance and called by class name
+// singleton class can create 1 object but static can't create object
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +11,7 @@ namespace ConsoleApplicationUl
 {
     class circle
     {
-        static float _pi; // static give one copy of pi to allocate memaory of thousand object and works efficiently.
+        static float _pi; // static give one copy of pi to allocate memory of thousand object and works efficiently.
         int _r;
 
         static circle()  // static constractor use to initiaze static field and dont use access modifier and work efficient
@@ -24,7 +28,7 @@ namespace ConsoleApplicationUl
 
         public float CalCirleArea() // method
         {
-            return circle._pi * (this._r * this._r); // static constra are called before instance constra..static cons only call once 
+            return circle._pi * (this._r * this._r); // static constructor are called before instance constructor..static cons only call once 
         }
 
     }

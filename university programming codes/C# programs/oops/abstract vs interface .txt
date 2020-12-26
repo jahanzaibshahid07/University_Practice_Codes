@@ -1,7 +1,7 @@
 // abstract class implementation of some member but interface cannot have implementation of its any method...
 // interface cannot have where as abstract class have fields
 // an interface cannot inherit form class but abstact class can inherit form interface....
-
+// abstract and interface both are user defined type
 
 
 
@@ -24,7 +24,7 @@ namespace consoleui
 
     public interface i1
     {
-        int id;
+       
         void print();
     }
 

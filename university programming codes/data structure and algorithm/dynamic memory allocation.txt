@@ -1,0 +1,22 @@
+#include <iostream>
+#include <stdio.h>
+#include <conio.h>
+
+using namespace std;
+
+void main()
+{
+	int a; // sma and declration statement // kitni memory milay yeh compile p time decide hojata h
+	float *p; // rum time p hi decide kare ktni memory allocate hogi
+	
+	p = (float *)malloc(4);//it is a malloc function use for dma and only access with pointer and malloc return only void thats why here we type cast
+	*p = 3.124;  // here 4 size of the memory block
+	cout << p;
+
+	float *ptr;
+	ptr =(float *)calloc(5,2); // its a dma function also create array and give size of the block in parameter 
+	*(p+0) = 35;
+	*(p+1) = 35;
+
+	getch();
+}

@@ -13,6 +13,7 @@ namespace ConsoleApplicationUl
         {
             Console.WriteLine("no parameter ");
         }
+
         public void test(int a) 
         {
             Console.WriteLine("a = " + a);

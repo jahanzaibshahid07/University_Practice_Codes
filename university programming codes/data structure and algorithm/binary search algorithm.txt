@@ -1,0 +1,49 @@
+// data must be in the accending order or decending order it is a flaw of binary search and it start to serach in the mid of the array..half of the array is not search
+
+#include <iostream>
+#include <conio.h>  
+
+using namespace std;
+
+void BinarySearch(int Arr[],int n,int item)
+{
+	int beg,ed,mid;
+	beg = 0;
+	ed = n;
+	mid = (beg+ed)/2;
+
+	while(beg <= ed && Arr[mid] != item)
+	{
+		if(Arr[mid] < item)
+			beg = mid + 1;
+		else
+			ed = mid - 1;
+
+		mid = (beg + ed)/2;
+	}
+	if(Arr[mid] == item)
+		cout << "Element positon : " << mid + 1;
+	else
+		cout << "Element not found : ";
+}
+
+
+void main()
+{
+	int Arr[100],i,item,n;
+
+	cout << "Enter no of element : ";
+	cin >> n;
+	cout << "Enter sorted element : \n";
+	for(i = 0; i  < n; i++)
+	{
+		cin >> Arr[i];
+	}
+
+	cout << "Enter element to search : ";
+	cin >> item;
+	BinarySearch(Arr,n,item);
+
+	getch();
+}
+

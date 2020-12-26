@@ -1,0 +1,48 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include <cstdlib>
+#include <conio.h>
+
+using namespace std;
+
+void Swap(char *a, char *b)
+{
+	char ch;
+	ch = *a;
+	*a = *b;
+	*b = ch;
+}
+
+void Permutation(char *s, int i,int n)
+{
+	static int count; int j;
+
+	if(i == n)
+	{
+		count ++;
+		cout << count << " ";
+		cout << s << endl;
+	}
+	else
+	{
+		for(int j = i; j <= n; j++) // this loop run  3 time.. 1 time abc 2 time bac 3 cba  
+		{        //    a    b,c
+			Swap((s+i),(s+j));
+			Permutation(s,i+1,n);
+			Swap((s+i),(s+j));
+		}
+	}
+}
+
+void main()
+{
+	char str[3];
+
+	cout << "Enter string ";
+	gets(str);
+
+	Permutation(str,0,strlen(str)-1);
+
+	getch();
+}

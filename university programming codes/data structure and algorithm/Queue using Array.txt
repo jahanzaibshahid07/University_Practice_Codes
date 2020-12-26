@@ -1,0 +1,75 @@
+#include <iostream>
+#include<conio.h>
+#include<stdio.h>
+#include<stdlib.h>
+using namespace std;
+
+#define MAX_SIZE 101
+int Arr[MAX_SIZE];
+int rear = -1;
+int front = -1;
+
+bool IsEmpty()
+{
+	if(rear == -1 && front == -1)
+		return true;
+	else
+		return false;
+}
+
+
+void Enqueue(int data)
+{
+	if(rear == MAX_SIZE -1)
+	{
+		cout << "Queue is full \n";
+	}
+	else 
+	{
+		if(front == -1)
+		front = 0;
+		rear++;
+		Arr[rear] = data;
+	}
+}
+
+void Dequeue()
+{
+	if(IsEmpty())
+	{
+		cout << "Queue is empty \n";
+	}
+	else if(front == rear)
+	{
+		front = rear = -1;
+	}
+	else
+	{
+		front++;
+	}
+}
+
+void Print()
+{
+	cout << "Queue : ";
+
+	for(int a = front; a <= rear; a++)
+	{
+		cout << Arr[a] << " ";
+	}
+	
+	cout << endl;
+}
+
+
+void main()
+{
+
+	Enqueue(4); Print();
+	Enqueue(5); Print();
+	Dequeue();  Print();
+	Enqueue(6); Print();
+	Dequeue();  Print();
+
+	getch();
+}

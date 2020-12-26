@@ -1,0 +1,24 @@
+// in select we divide array in two sub array sorted and unsorted
+// first step is to find min element and then swap with initial element of array
+// using this first element is sort and try for next min element   
+
+public static void SelectionSort(int []arr)
+{
+		
+        for (int i = 0; i < arr.Length; i++)
+        {
+			int min = i;
+
+			for (int j = i+1; j < arr.Length; j++)
+            {
+				if(arr[j] < arr[min])
+				{
+					min = j;
+				}
+            }
+
+			int temp = arr[i];
+			arr[i] = arr[min];
+			arr[min] = temp;
+        }
+}

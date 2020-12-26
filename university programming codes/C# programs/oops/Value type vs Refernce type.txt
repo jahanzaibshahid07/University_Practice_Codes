@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace consoleui
+{
+   
+
+    class Program
+    {
+        public static void ValueType()
+        {
+            int a = -5;
+            int b = a;
+
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+
+            b = 10;
+
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+
+        }
+
+        public static void ReferenceType()
+        {
+            int []a = { -5 };
+            int []b = a;
+
+            Console.WriteLine(a[0]);
+            Console.WriteLine(b[0]);
+
+            b[0] = 10;
+
+            Console.WriteLine(a[0]);
+            Console.WriteLine(b[0]);
+        }
+
+        static void Main(string[] args)
+        {
+            ValueType();
+
+            Console.WriteLine("=============================");
+
+            ReferenceType();
+            
+            Console.ReadKey();
+        }
+    }
+}

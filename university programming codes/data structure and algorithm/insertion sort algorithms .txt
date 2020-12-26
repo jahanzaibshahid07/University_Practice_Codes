@@ -1,0 +1,65 @@
+//always start with second element as key and compare with the element ahead of it..
+// after second compare the third value with second and one and so on....
+
+
+#include <iostream>
+#include <string.h>
+#include <conio.h>  
+
+using namespace std;
+
+void CountingSort(int A[],int N,int B[])
+{
+	const int K = 100; // 10 for unit hundred for 100 two digits
+	int C[K];
+	int i,j;
+
+	for(i = 0; i < K; i++)
+	{
+		C[i] = 0;
+	}
+
+	for(j = 0; j < N;j++)
+	{
+		C[A[j]] = C[A[j]] + 1;
+	}
+
+	for(i = 1; i < K; i++)
+	{
+		C[i] = C[i] + C[i-1];
+	}
+
+	for(j = N-1; j >= 0; j--)
+	{
+		B[C[A[j]]-1] = A[j];
+		C[A[j]] = C[A[j]] - 1;
+	}
+}
+
+void main()
+{
+
+	int A[15];
+	int B[15];
+	int N,i; 
+
+	cout << "Enter no of element ";
+	cin >> N;
+
+	cout << "Enter element : \n";
+	for(i = 0; i < N; i++)
+	{
+		cin >> A[i];
+	}
+
+	cout << "After Sorting : ";
+	
+	CountingSort(A,N,B);
+
+	for(i = 0; i < N; i++)
+	{
+		cout << B[i] << endl;
+	}
+
+	getch();
+}
