@@ -109,10 +109,13 @@ select * from Department Cross Join Employees
 
 ---- NON Ansi Commands -----
 
-select * from Employees
+
+select * from Employees, Department where Employees.Did = Department.Did -- Equi Join have = operator
+
+select * from Employees, Department where Employees.Did > Department.Did --Non Equi Join have all operator except = operator
 
 select e1.Eid,e1.Ename,e1.Esalary,e1.Did from Employees as e1, Employees as e2 
-where e1.Esalary = e2.Esalary and e2.Ename = 'Talal'  -- this is called self joined apply on single table
+where e1.Esalary = e2.Esalary and e2.Ename = 'Talal'  --This is called Self Joined apply on Single Table
 
 
 ---- Where and Having Clauses -----
@@ -188,7 +191,7 @@ select Job, count(*) as numofemp, Deptno from Emp group by rollup(Job,Deptno)
 select Job,count(*) as numofemp, Deptno from Emp group by cube(Job,Deptno)
 
 
----- Stored Functions -----
+---- Stored Functions ----- its only perform on select command DRL return value is must
 
 -- 1) Table valued functions return multiple value and mulitple col value 
 
@@ -220,4 +223,89 @@ end
 select dbo.F_GROSSSAL(4) -- calling scalar valued functions 
 
 
-select * from Emp
+---- Stored Procedure ----- its only perform on DDL command return value is not must
+
+Create Procedure GrossSalary( 
+	@Empid int, 
+	@PF int out, 
+	@PT int out
+)
+As
+Begin
+Declare @Sal money
+Select @Sal = Empsalary from Emp where Empid = @Empid
+Set @PF = @Sal * 0.1
+Set @PT = @Sal * 0.2
+End
+
+-- for return we use out parameters
+
+Declare @newPF int, @newPT int 
+Execute GrossSalary 1, @newPF out, @newPT out
+Print 'P Fund : ' + Cast(@newPF as varchar)
+Print 'P Tax : ' + Cast(@newPT as varchar)
+
+
+---- Views in SQL ----- is used to hide sensitive data 
+
+-- Simple Views -- operation can perform on single table and all DML operation can perform on simple view
+
+create view V1 as select * from Emp
+
+insert V1 values(9,'wali','hr',35000,2) 
+
+update V1 set Empname = 'jahanzeb' where Empid = 1
+
+insert V1 values(9,'wali','hr',35000,2) 
+
+delete from V1 where Empid = 4 
+
+select * from V1
+
+
+-- Complex Views -- operation can perform on multiple table and not all DML operation can perform on complex view
+
+create view C1 as
+select * from EmpKhi
+union
+select * from EmpLhr
+
+
+insert C1 values(9,'wali',35000) 
+update C1 set name = 'jahanzeb' where id = 1 -- these operations are not perform on complex view
+delete from C1 where id = 3 
+
+select * from C1
+
+
+-------- Cursors ------- it is temp memory allocate by user to perform DML operations
+
+declare c1 cursor scroll for select * from Emp
+open c1
+fetch first from c1
+fetch next from c1
+fetch last from c1
+fetch prior from c1
+fetch absolute 5 from c1 
+fetch relative -2 from c1
+close c1
+deallocate c1 
+
+
+declare c1 cursor scroll for select Empname,Empsalary from Emp
+declare @name varchar(20), @esal money 
+open c1
+fetch first from c1 into @name, @esal
+print 'name : ' + @name + ' salary : ' + cast(@esal as varchar(20))
+fetch next from c1 into @name, @esal
+print 'name : ' + @name + ' salary : ' + cast(@esal as varchar(20))
+fetch last from c1 into @name, @esal
+print 'name : ' + @name + ' salary : ' + cast(@esal as varchar(20))
+fetch prior from c1 into @name, @esal
+print 'name : ' + @name + ' salary : ' + cast(@esal as varchar(20))
+fetch absolute 5 from c1 into @name, @esal
+print 'name : ' + @name + ' salary : ' + cast(@esal as varchar(20))
+fetch relative -2 from c1 into @name, @esal
+print 'name : ' + @name + ' salary : ' + cast(@esal as varchar(20))
+close c1
+deallocate c1 
